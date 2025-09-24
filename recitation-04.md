@@ -36,8 +36,8 @@ To use this function to count words, you'll need to implement your own `map_f` a
 
 4. Assume that a word `w` appears `n` times. What is the **work** and **span** of `word_count_reduce` for this word, assuming a parallel implementation of the `reduce` function?
 
-**Work of word_count_reduce is O(n) because we need to sum all n instances of the word together**
-**Span of word_count_reduce is O(logn) since the reduce function uses parallel addition in a binary tree structure**
+**Work of word_count_reduce is O(n) because we need to sum all n instances of the word together.**
+**Span of word_count_reduce is O(logn) since the reduce function uses parallel addition in a binary tree structure.**
 
 
 5. Why are we going through all this trouble? Couldn't I just use this function to count words?
