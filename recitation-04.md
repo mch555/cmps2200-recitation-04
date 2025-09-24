@@ -1,6 +1,6 @@
 # CMPS 2200  Recitation 04
 
-**Name (Team Member 1):**_________________________  
+**Name (Team Member 1):**___Maeren Hay______________________  
 **Name (Team Member 2):**_________________________
 
 
@@ -36,7 +36,8 @@ To use this function to count words, you'll need to implement your own `map_f` a
 
 4. Assume that a word `w` appears `n` times. What is the **work** and **span** of `word_count_reduce` for this word, assuming a parallel implementation of the `reduce` function?
 
-**Enter answer here**
+**Work of word_count_reduce is O(n) because we need to sum all n instances of the word together**
+**Span of word_count_reduce is O(logn) since the reduce function uses parallel addition in a binary tree structure**
 
 
 5. Why are we going through all this trouble? Couldn't I just use this function to count words?
@@ -52,7 +53,7 @@ for doc in docs:
 
 What is the problem that prevents us from easily parallelizing this solution?
 
-**Enter answer here**
+**The problem is that 'counts' is a shared mutable dictionary object from defaultdict, which would cause processes to update counts at the same time and cause race conditions. To parallelize we have to avoid shared mutable states**
 
 
 ## Part 2: Sentiment analysis
@@ -64,3 +65,4 @@ Finally, we'll adapt our approach above to perform a simple type of sentiment an
 6. Complete the `sentiment_map` function to implement the above idea and test it with `test_sentiment_map`.
 
 7. Since the output here is similar to the word count problem, we will reuse `word_count_reduce` to compute the total number of positive and negative terms in a sequence of documents. Confirm your results work by running `test_sentiment`.
+
